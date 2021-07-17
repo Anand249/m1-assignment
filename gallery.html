@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DCC</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+
+  <body id="home">
+    <header>
+      <div class="main-header">
+        <div class="logo">
+          <img
+            src="pictures/logo.PNG"
+            alt="Delhi Community Center Logo"
+            width="125"
+          />
+          <nav class="main-menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="recreation.html">Recreation</a></li>
+              <li><a href="recreation.html">Park &amp; Trails</a></li>
+              <li><a href="contact_us.html">Contact</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h1>Gallery</h1>
+      <p>
+        Welcome to Delhi Parks &amp; Recreation, where we are proud to offer a
+        wide range of activities and events for the whole family!
+      </p>
+      <section>
+        <ul id="gallery"></ul>
+      </section>
+    </main>
+    <footer>
+      <div id="nondisclaimer">
+        <div class="copy">&copy; 2021 :: delhiComunityCenter.com</div>
+        <div class="social">
+          <a href="#" class="fa fa-facebook"></a>
+          <a href="#" class="fa fa-instagram"></a>
+          <a href="#" class="fa fa-twitter"></a>
+        </div>
+      </div>
+      <div id="disclaimer">
+        <p>
+          This website is designed and created solely for educational purposes
+          only at Westcliff University. All contents are not intended for any
+          commercial gain or use.
+        </p>
+      </div>
+    </footer>
+    <script>
+      var photos = [];
+      var fileNames = [];
+      var imageList = [];
+      var captionTexts = [];
+      var descTexts = [];
+      var image;
+      var openList = "<li class='partner'>";
+      var closeList = "</li>";
+      var openDiv = "<div class='caption'>Community Center";
+      var closeDiv = "</div>";
+      var openDescDiv = "<div class='openDescTag'>";
+      var closeDescDiv = "</div>";
+      var imageType = [
+        "basketBall",
+        "gym",
+        "launge",
+        "overview",
+        "reception",
+        "restArea",
+        "gameRoom",
+        "pool",
+        "partyRoom",
+      ];
+      var captionTexts = [
+        " Basketball court",
+        " Gym",
+        " Lounge",
+        " Overview",
+        " Reception",
+        " Rest Area",
+        " Game Room",
+        " Swimming Pool",
+        " Party Room",
+      ];
+      var descTexts = [
+        "Best place for Basketball",
+        "Health is wealth fitness center",
+        "Best place for chill out",
+        "Entire community center overview",
+        "Where to go for registration",
+        "Best place to Relax",
+        "Just one more game",
+        "A splashing good time!",
+        "The night is still just getting started",
+      ];
+
+      //Create a loop to create 9 images string with index of 0
+      for (var i = 0; i < 9; i++) {
+        fileNames.push("community" + "-" + imageType[i]);
+        photos.push(
+          openDescDiv +
+            descTexts[i] +
+            closeDescDiv +
+            "<img src='pictures/gallery/" +
+            fileNames[i] +
+            ".jpg'>" +
+            openDiv +
+            captionTexts[i] +
+            closeDiv
+        );
+        image = openList + photos[i] + closeList;
+        imageList.push(image);
+        console.log("imageList", imageList);
+      }
+
+      document.getElementById("gallery").innerHTML = imageList;
+    </script>
+  </body>
+</html>
