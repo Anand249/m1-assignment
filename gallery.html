@@ -10,6 +10,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
   <body id="home">
@@ -42,6 +48,15 @@
       <section>
         <ul id="gallery"></ul>
       </section>
+      <div id="popUp" class="modal">
+        <div class="modal-content">
+          <h4 id="popUpHeader" class="popHeader"></h4>
+          <p id="popUpBody" class="popBody"></p>
+          <span onclick="closePopUp()" class="popClose"
+            >Click This To Close</span
+          >
+        </div>
+      </div>
     </main>
     <footer>
       <div id="nondisclaimer">
@@ -60,73 +75,6 @@
         </p>
       </div>
     </footer>
-    <script>
-      var photos = [];
-      var fileNames = [];
-      var imageList = [];
-      var captionTexts = [];
-      var descTexts = [];
-      var image;
-      var openList = "<li class='partner'>";
-      var closeList = "</li>";
-      var openDiv = "<div class='caption'>Community Center";
-      var closeDiv = "</div>";
-      var openDescDiv = "<div class='openDescTag'>";
-      var closeDescDiv = "</div>";
-      var imageType = [
-        "basketBall",
-        "gym",
-        "launge",
-        "overview",
-        "reception",
-        "restArea",
-        "gameRoom",
-        "pool",
-        "partyRoom",
-      ];
-      var captionTexts = [
-        " Basketball court",
-        " Gym",
-        " Lounge",
-        " Overview",
-        " Reception",
-        " Rest Area",
-        " Game Room",
-        " Swimming Pool",
-        " Party Room",
-      ];
-      var descTexts = [
-        "Best place for Basketball",
-        "Health is wealth fitness center",
-        "Best place for chill out",
-        "Entire community center overview",
-        "Where to go for registration",
-        "Best place to Relax",
-        "Just one more game",
-        "A splashing good time!",
-        "The night is still just getting started",
-      ];
-
-      //Create a loop to create 9 images string with index of 0
-      for (var i = 0; i < 9; i++) {
-        fileNames.push("community" + "-" + imageType[i]);
-        photos.push(
-          openDescDiv +
-            descTexts[i] +
-            closeDescDiv +
-            "<img src='pictures/gallery/" +
-            fileNames[i] +
-            ".jpg'>" +
-            openDiv +
-            captionTexts[i] +
-            closeDiv
-        );
-        image = openList + photos[i] + closeList;
-        imageList.push(image);
-        console.log("imageList", imageList);
-      }
-
-      document.getElementById("gallery").innerHTML = imageList;
-    </script>
+    <script type="text/javascript" src="javascript/common.js"></script>
   </body>
 </html>
