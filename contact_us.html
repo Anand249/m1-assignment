@@ -60,20 +60,36 @@
           <div class="textbox">
             <label>Name:</label>
             <input type="text" name="name" placeholder="Anand Babu" />
-            <label>Email:</label>
-            <input
-              type="email"
-              name="email"
-              placeholder="anandbabu@gmail.com"
-            />
-            <label>Phone:</label>
-            <input type="text" name="phone" placeholder="999-999-9999" />
           </div>
-
+          <div class="radios">
+            <label>Select your gender</label>
+            <input type="radio" name="contact" value="email" />Male
+            <input type="radio" name="contact" value="phone" />Female
+          </div>
           <div class="radios">
             <label>How should we contact you?</label>
-            <input type="radio" name="contact" value="email" checked />Email
-            <input type="radio" name="contact" value="phone" />Phone
+            <select id="contact">
+              <option
+                type="emial"
+                name="email"
+                value="email"
+                placeholder="anandbabu@gmail.com"
+              >
+                Email
+              </option>
+              <option
+                type="phone"
+                name="phone"
+                value="phone"
+                placeholder="999-999-9999"
+              >
+                Phone
+              </option>
+            </select>
+          </div>
+          <div>
+            <label id="contactLabel"></label>
+            <input type="text" />
           </div>
 
           <div class="selectmenu">
@@ -99,5 +115,6 @@
         </fieldset>
       </form>
     </main>
+    <script type="text/javascript" src="javascript/common.js"></script>
   </body>
 </html>
