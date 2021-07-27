@@ -59,22 +59,6 @@ var imageDescription = [
   "Nam imperdiet dapibus arcu sit amet condimentum.",
 ];
 
-var selectContact = document.getElementById("contact");
-var contactType = "email";
-document.getElementById("contactLabel").innerHTML = "Enter your " + contactType;
-
-selectContact.addEventListener("change", (e) => {
-  contactType = `${e.target.value}`;
-  console.log("contactType", contactType);
-  if (contactType === "phone") {
-    document.getElementById("contactLabel").innerHTML =
-      "Enter your " + contactType;
-  } else {
-    document.getElementById("contactLabel").innerHTML =
-      "Enter your " + contactType;
-  }
-});
-
 //Create a loop to create 9 images string with index of 0
 for (var i = 0; i < 9; i++) {
   fileNames.push("community" + "-" + imageType[i]);
