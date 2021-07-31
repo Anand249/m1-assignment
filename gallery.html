@@ -57,6 +57,12 @@
           >
         </div>
       </div>
+
+      <div class="backdrop"></div>
+
+      <div class="box">
+        <div class="close">x</div>
+      </div>
     </main>
     <footer>
       <div id="nondisclaimer">
@@ -76,5 +82,45 @@
       </div>
     </footer>
     <script type="text/javascript" src="javascript/common.js"></script>
+    <script>
+      $(document).ready(function () {
+        $(".partner img").click(function () {
+          $(".backdrop")
+            .animate({ opacity: ".50" }, 300, "linear")
+            .css("display", "block");
+          $(".box").fadeIn();
+          console.log("Box", $(".box").contents("img"));
+
+          if ($(".box").contents("img")) {
+            $(".box").contents().remove("img");
+          }
+
+          var altvalue = $(this).attr("alt");
+          console.log("altvalue", altvalue);
+          console.log("fileNames", fileNames);
+
+          for (var i = 0; i < 9; i++) {
+            if (fileNames[i] == altvalue) {
+              value = i + 1;
+              var img = $("li:nth-child(" + value + ") img").clone();
+              console.log("img", img);
+
+              $(".box").append(img);
+            }
+          }
+          $(".close, .backdrop").click(function () {
+            $(".backdrop").animate(
+              { opacity: "0" },
+              300,
+              "linear",
+              function () {
+                $(".backdrop").css("display", "none");
+              }
+            );
+            $(".box").fadeOut();
+          });
+        });
+      });
+    </script>
   </body>
 </html>

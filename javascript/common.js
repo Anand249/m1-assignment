@@ -70,7 +70,10 @@ for (var i = 0; i < 9; i++) {
       closeDescDiv +
       "<img src='pictures/gallery/" +
       fileNames[i] +
-      ".jpg'>" +
+      ".jpg' " +
+      "alt=" +
+      fileNames[i] +
+      ">" +
       openDiv +
       captionTexts[i] +
       closeDiv
